@@ -81,6 +81,7 @@ fun App() {
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
             items(
                 items = list,
+                key = { number -> number }
             ) { number ->
                 Item(number)
             }
