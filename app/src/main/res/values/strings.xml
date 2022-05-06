@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RecompositionDemo</string>
+    <string name="eligible_to_vote">You are eligible to vote</string>
+    <string name="not_eligible_to_vote">You are NOT eligible to vote</string>
+</resources>
