@@ -65,12 +65,12 @@ fun App() {
 
     LogCompositions(TAG, "App Recomposed")
 
-    Occupation(employee)
+    Occupation(employee.occupation)
 
     Column {
         LogCompositions(TAG, "Column Recomposed")
-        Name(employee)
-        Age(employee)
+        Name(employee.name)
+        Age(employee.age)
         Button(onClick = {
             employee = employee.copy(name = "John")
             Log.d(TAG, "${employee}")
@@ -95,21 +95,21 @@ fun App() {
 //}
 
 @Composable
-fun Age(employee: Employee) {
+fun Age(age: Int) {
     LogCompositions(TAG, "Age Recomposed")
-    Text(text = eligibilityText(employee.age))
+    Text(text = eligibilityText(age))
 }
 
 @Composable
-fun Occupation(employee: Employee) {
+fun Occupation(occupation: String) {
     LogCompositions(TAG, "Occupation Recomposed")
-    Text(text = employee.occupation)
+    Text(text = occupation)
 }
 
 @Composable
-fun Name(employee: Employee) {
+fun Name(name: String) {
     LogCompositions(TAG, "Name Recomposed")
-    Text(text = employee.name)
+    Text(text = name)
 }
 
 @Composable
