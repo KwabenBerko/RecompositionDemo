@@ -56,12 +56,12 @@ fun App() {
             Employee(name = "Anthony", age = 99, occupation = "Biochemist")
         )
     }
-//    var list by remember { mutableStateOf(IntRange(2, 10).map { it }) }
-//
-//    LaunchedEffect(Unit) {
-//        delay(2000L)
-//        list = IntRange(1, 10).map { it }
-//    }
+    var list by remember { mutableStateOf(IntRange(2, 10).map { it }) }
+
+    LaunchedEffect(Unit) {
+        delay(2000L)
+        list = IntRange(1, 10).map { it }
+    }
 
     LogCompositions(TAG, "App Recomposed")
 
@@ -78,21 +78,21 @@ fun App() {
             LogCompositions(TAG, "Button Recomposed")
             Text(text = "Update")
         }
-//        LazyColumn(modifier = Modifier.fillMaxWidth()) {
-//            items(
-//                items = list,
-//            ) { number ->
-//                Item(number)
-//            }
-//        }
+        LazyColumn(modifier = Modifier.fillMaxWidth()) {
+            items(
+                items = list,
+            ) { number ->
+                Item(number)
+            }
+        }
     }
 }
 
-//@Composable
-//fun Item(number: Int) {
-//    LogCompositions(TAG, msg = "Item Number: $number Recomposed")
-//    Text(text = "$number")
-//}
+@Composable
+fun Item(number: Int) {
+    LogCompositions(TAG, msg = "Item Number: $number Recomposed")
+    Text(text = "$number")
+}
 
 @Composable
 fun Age(employee: Employee) {
