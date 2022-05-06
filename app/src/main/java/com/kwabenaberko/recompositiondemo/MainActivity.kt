@@ -113,6 +113,7 @@ fun Name(employee: Employee) {
 }
 
 @Composable
+@ReadOnlyComposable
 fun eligibilityText(age: Int) = if (age > 18) {
     stringResource(R.string.eligible_to_vote)
 } else {
